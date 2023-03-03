@@ -1,7 +1,7 @@
 service: basicapp
 image: kolosek/basicapp
 servers:
-  - 116.203.207.181
+  - 5.161.63.224
 registry:
   username: kolosek
   password:
