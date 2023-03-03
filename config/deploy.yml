@@ -1,0 +1,8 @@
+service: basicapp
+image: kolosek/basicapp
+servers:
+  - 116.203.207.181
+registry:
+  username: kolosek
+  password:
+    - MRSK_REGISTRY_PASSWORD
