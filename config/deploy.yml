@@ -11,5 +11,7 @@ env:
     - RAILS_MASTER_KEY
 builder:
   multiarch: false
-# labels:
-#   traefik.http.routers.hey.rule: Host(\'basic.kolosek.me\'')
+volumes:
+  - "~/basic/public:/rails/public"
+ labels:
+   traefik.http.routers.hey.rule: Host(\'basic.kolosek.me\'')
