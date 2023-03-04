@@ -6,3 +6,6 @@ registry:
   username: kolosek
   password:
     - MRSK_REGISTRY_PASSWORD
+env:
+  secret:
+    - RAILS_MASTER_KEY
