@@ -9,3 +9,5 @@ registry:
 env:
   secret:
     - RAILS_MASTER_KEY
+builder:
+  multiarch: false

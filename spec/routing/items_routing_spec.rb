@@ -7,7 +7,7 @@ RSpec.describe ItemsController, type: :routing do
     end
 
     it "routes to #new" do
-      expect(get: "/items/new1").to route_to("items#new")
+      expect(get: "/items/new").to route_to("items#new")
     end
 
     it "routes to #show" do
