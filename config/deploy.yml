@@ -12,6 +12,6 @@ env:
 builder:
   multiarch: false
 traefik:
-  host_port: 8080
+  host_port: 81
   labels:
     traefik.http.routers.basicapp.rule: Host(\'basic.kolosek.me\'')
