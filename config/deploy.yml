@@ -1,7 +1,10 @@
 service: basicapp
 image: kolosek/basicapp
 servers:
-  - 5.161.63.224
+  web:
+    - 5.161.63.224
+    traefik:
+      host_port: 81
 registry:
   username: kolosek
   password:
@@ -13,5 +16,3 @@ builder:
   multiarch: false
 labels:
    traefik.http.routers.hey.rule: Host(\'basic.kolosek.me\'')
-traefik:
-  host_port: 81
