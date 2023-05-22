@@ -29,7 +29,7 @@ RSpec.describe HardJob, type: :job do
   end
   
   it "does short flaky test" do
-    expect(1).to eq(Random.rand(1..2))
+    expect(ENV['RSPEC_RETRY_RETRY_COUNT]).to eq(2)
   end
 
 end
