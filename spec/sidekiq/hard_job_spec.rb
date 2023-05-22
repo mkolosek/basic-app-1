@@ -19,4 +19,17 @@ RSpec.describe HardJob, type: :job do
     sleep 10
     expect(1).to eq(1)
   end
+  
+  it "does short pass test" do
+    expect(1).to eq(1)
+  end
+  
+  it "does short fail test" do
+    expect(1).to eq(2)
+  end
+  
+  it "does short flaky test" do
+    expect(1).to eq(Random.rand(1..2))
+  end
+
 end
