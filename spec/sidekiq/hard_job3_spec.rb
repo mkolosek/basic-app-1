@@ -16,7 +16,7 @@ RSpec.describe HardJob3, type: :job do
   end
   
   it "does forth long test" do
-    sleep 15
+    sleep 1
     expect(1).to eq(1)
   end
 end

@@ -1,7 +1,7 @@
 require 'rails_helper'
 RSpec.describe HardJob4, type: :job do
   it "does a long test" do
-    sleep 10
+    sleep 1
     expect(1).to eq(1)
   end
   
