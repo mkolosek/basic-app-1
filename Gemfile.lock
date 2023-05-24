@@ -127,6 +127,7 @@ GEM
     nokogiri (1.13.9)
       mini_portile2 (~> 2.8.0)
       racc (~> 1.4)
+    pg (1.5.3)
     public_suffix (5.0.0)
     puma (5.6.5)
       nio4r (~> 2.0)
@@ -203,8 +204,6 @@ GEM
       actionpack (>= 5.2)
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
-    sqlite3 (1.5.4)
-      mini_portile2 (~> 2.8.0)
     stimulus-rails (1.1.1)
       railties (>= 6.0.0)
     thor (1.2.1)
@@ -241,6 +240,7 @@ DEPENDENCIES
   debug
   importmap-rails
   jbuilder
+  pg (>= 0.18, < 2.0)
   puma (~> 5.0)
   rails (~> 7.0.4)
   redis (~> 4.0)
@@ -248,7 +248,6 @@ DEPENDENCIES
   selenium-webdriver
   sidekiq
   sprockets-rails
-  sqlite3 (~> 1.4)
   stimulus-rails
   turbo-rails
   tzinfo-data
