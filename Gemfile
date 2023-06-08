@@ -31,8 +31,6 @@ gem "jbuilder"
 #Background processing
 gem "sidekiq", "~> 7.0.7"
 
-gem 'ruby-debug-ide', '= 0.7.3'
-
 # Use Redis adapter to run Action Cable in production
 gem "redis", "~> 4.0"
 
