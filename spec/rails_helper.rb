@@ -25,66 +25,6 @@ require 'rspec/rails'
 #
 # Dir[Rails.root.join('spec', 'support', '**', '*.rb')].sort.each { |f| require f }
 
-options = Selenium::WebDriver::Chrome::Options.new
-
-options.add_preference(
-  :download,
-  prompt_for_download: false,
-  default_directory: Rails.root.join('tmp/downloads'),
-)
-
-options.add_preference(
-  :browser,
-  set_download_behavior: { behavior: 'allow' },
-)
-
-options.add_argument('--window-size=1280,800')
-
-client = Selenium::WebDriver::Remote::Http::Default.new
-client.read_timeout = 300
-
-Capybara.register_driver :chrome do |app|
-  Capybara::Selenium::Driver.new(
-    app,
-    browser: :chrome,
-    options: options,
-    http_client: client,
-  )
-end
-
-Capybara.register_driver :chrome_headless do |app|
-  options.add_argument('--headless')
-  options.add_argument('--disable-gpu')
-  options.add_argument('--window-size=1280,800')
-  options.add_argument("--remote-debugging-port=9222")
-
-  driver = Capybara::Selenium::Driver.new(
-    app,
-    browser: :chrome,
-    options: options,
-    http_client: client,
-  )
-
-  bridge = driver.browser.send(:bridge)
-  path = "/session/#{bridge.session_id}/chromium/send_command"
-
-  bridge.http.call(
-    :post, path,
-    cmd: 'Page.setDownloadBehavior',
-    params: {
-      behavior: 'allow',
-      downloadPath: Rails.root.join('tmp/downloads'),
-    }
-  )
-
-  driver
-end
-
-driver = ENV['CAPYBARA_DRIVER']&.to_sym || :chrome_headless
-
-Capybara.default_driver = driver
-Capybara.javascript_driver = driver
-
 
 # Checks for pending migrations and applies them before tests are run.
 # If you are not using ActiveRecord, you can remove these lines.
