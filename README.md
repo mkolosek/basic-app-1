@@ -11,6 +11,9 @@ Updates
 
 * System dependencies
 
+
+
+
 * Configuration
 
 * Database creation
@@ -23,5 +26,3 @@ Updates
 * Services (job queues, cache servers, search engines, etc.)
 
 * Deployment instructions
-
-* ...
